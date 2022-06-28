@@ -1,6 +1,8 @@
 use std::error::Error;
 use std::io::{self, stderr, BufRead, Write};
 
+pub mod plant_structures;
+
 fn main() {
     let mut total = 0;
     // compound assignment
@@ -72,6 +74,31 @@ fn main() {
     //         }
     //     }
     // }
-    
-    
+
+    // the simplest way to handle errors in main() is to use expect()
+    let number = Some(7);
+    let letter: Option<&str> = Some("Abcd");
+    let emoticon: Option<i32> = None;
+
+    if let Some(i) = letter {
+        println!("Matched {:?}!", i);
+    } else {
+        println!("Didn't match a number. Let's go with a letter!");
+    }
+
+    // crates about code sharing between projects
+    // modules code organisation within project
+    // pub allows the use within crate and no pub in other words
+    // private may be used only inside of a module
+    // mod plant_structures {
+    //     pub mod roots {
+    //         pub mod products {}
+    //     }
+    //     pub mod stems {}
+    //     pub mod leaves {}
+    // }
+
+    // it's painful to keep all of the code in one file
+    // so what is better is modules in separate files
+    // mod spores;
 }
